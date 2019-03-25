@@ -1,12 +1,17 @@
-const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
+    publicPath: '/',
+  },
+
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 
   module: {
@@ -59,8 +64,12 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '/dist'),
+    historyApiFallback: true,
+    watchContentBase: true,
     compress: true,
+    inline: true,
     port: 1902,
+    hot: true,
   },
-}
+};
