@@ -1,10 +1,4 @@
-const initState = {
-  projects: [
-    { id: '1', title: 'title-1', content: 'some text' },
-    { id: '2', title: 'title-2', content: 'some text' },
-    { id: '3', title: 'title-3', content: 'some text' },
-  ],
-};
+const initState = {};
 
 const projectReducer = (state = initState, action) => {
   switch (action.type) {
