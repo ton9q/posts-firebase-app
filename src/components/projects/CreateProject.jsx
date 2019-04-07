@@ -8,6 +8,9 @@ class CreateProject extends Component {
       title: '',
       content: '',
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -32,7 +35,7 @@ class CreateProject extends Component {
           </div>
           <div className="input-field">
             <label htmlFor="content">Project Content</label>
-            <textarea id="content" classNam="materialize-textarea" onChange={this.handleChange} />
+            <textarea id="content" className="materialize-textarea" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Create</button>

@@ -10,6 +10,9 @@ class SignUp extends Component {
       firstName: '',
       lastName: '',
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
