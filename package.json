@@ -11,10 +11,16 @@
   "author": "ton9q",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^5.9.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-hot-loader": "^4.8.0",
-    "react-router-dom": "^5.0.0"
+    "react-redux": "^6.0.1",
+    "react-redux-firebase": "^2.2.6",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-firestore": "^0.7.3",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
