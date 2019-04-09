@@ -6,7 +6,7 @@ export const createProject = project => (dispatch, getState, { getFirbase, getFi
     .collection('projects')
     .add({
       ...project,
-      authorFirstNmae: 'Anton',
+      authorFirstName: 'Anton',
       authorLastName: 'Kuchma',
       authorId: 123,
       createdAt: new Date(),

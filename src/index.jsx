@@ -13,17 +13,20 @@ import './index.scss';
 
 import rootReducer from './store/reducers/rootReducer';
 
-const store = createStore(rootReducer,
+const store = createStore(
+  rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(fbConfig),
-    reactReduxFirebase(fbConfig),
-  ));
-
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
+    reactReduxFirebase(fbConfig, { attachAuthIsReady: true }),
+  ),
 );
+
+store.firebaseAuthIsReady.then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root'),
+  );
+});

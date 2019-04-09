@@ -50,10 +50,10 @@ class CreateProject extends Component {
   }
 }
 
-const mapDispatchToPtops = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     createProject: project => dispatch(createProject(project)),
   };
 };
 
-export default connect(null, mapDispatchToPtops)(CreateProject);
+export default connect(null, mapDispatchToProps)(CreateProject);
